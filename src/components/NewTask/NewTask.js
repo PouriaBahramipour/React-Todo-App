@@ -3,10 +3,16 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styles from "./NewTask.module.scss";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 const NewTask = () => {
   return (
-    <Card className={styles.input}>
-      <h2>Create New Task</h2>
+    <Card className={styles.cardContent}>
+      <div className={styles.header}>
+        <FontAwesomeIcon icon={faArrowLeft} size="1x" className={styles.icon} />
+        <h2 className={styles.title}>Create New Task</h2>
+      </div>
       <form className={styles.from}>
         <label htmlFor="title">Title</label>
         <input id="title" type="text"></input>
