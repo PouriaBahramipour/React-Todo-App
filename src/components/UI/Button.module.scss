@@ -1,0 +1,10 @@
+@import '/src/styles/variables';
+
+.button {
+    border: 1px solid $primary-color;
+    background: $primary-color;
+    color: $color_white;
+    border-radius: 1rem;
+    padding: 0.75rem 4rem;
+    cursor: pointer;
+  }
