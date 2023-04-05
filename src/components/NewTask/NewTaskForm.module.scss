@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+
+form {
+  margin: 100px 0;
+
+  label {
+    display: block;
+    width: 60%;
+    margin: 2rem auto 0;
+    text-align: left;
+  }
+
+  input {
+    margin: 0.5rem auto;
+    display: block;
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
+    background: $input-color;
+  }
+
+  .submitButton {
+    margin: 1.5rem 0.5rem;
+  }
+  .cancelButton {
+    margin: 1.5rem 0.5rem;
+    background-color: $color_white;
+    color: $color-black;
+    border: none;
+  }
+}
