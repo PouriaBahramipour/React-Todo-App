@@ -1,7 +1,7 @@
 @import "/src/styles/variables";
 
 form {
-  margin: 100px 0;
+  margin: 5.3rem 0;
 
   label {
     display: block;
@@ -29,5 +29,19 @@ form {
     background-color: $color_white;
     color: $color-black;
     border: none;
+  }
+
+  .invalid p {
+    width: 60%;
+    margin: 0.5rem auto;
+    text-align: left;
+    font-size: 0.8rem;
+    color: $warning-color;
+  }
+
+  .invalid input {
+    border-color: #aa0b20;
+    background-color: #ffeff1;
+    margin-bottom: 0;
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../UI/Card";
 import HomeImage from "./HomeImage";
 import styles from "./Home.module.scss";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +19,7 @@ const Home = () => {
         </div>
         <div>
           <FontAwesomeIcon icon={faPlus} size="1x" color="#1B91FB" />
-          <a href="/">Create new task</a>
+          <Link to="/newtask">Create new task</Link>
         </div>
       </div>
     </Card>
