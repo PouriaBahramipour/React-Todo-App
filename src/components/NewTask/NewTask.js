@@ -9,10 +9,10 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 const NewTask = () => {
   return (
     <Card className={styles.cardContent}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <FontAwesomeIcon icon={faArrowLeft} size="1x" className={styles.icon} />
         <h2 className={styles.title}>Create New Task</h2>
-      </div>
+      </header>
       <form className={styles.from}>
         <label htmlFor="title">Title</label>
         <input id="title" type="text"></input>
