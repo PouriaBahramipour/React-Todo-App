@@ -8,8 +8,17 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const NewTask = () => {
-  const submitNewTaskHandler = (taskInfo) => {
-    console.log(taskInfo);
+  const submitNewTaskHandler = async (taskInfo) => {
+    await fetch(
+      "https://todo-app-4c82d-default-rtdb.firebaseio.com/todo.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          title: taskInfo.title,
+          category: taskInfo.category,
+        }),
+      }
+    );
   };
 
   return (
