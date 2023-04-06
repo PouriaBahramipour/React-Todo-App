@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../UI/Button";
 import styles from "./NewTaskForm.module.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const isEmpty = (value) => {
   return value.trim() === "";
@@ -17,6 +18,8 @@ const NewTaskForm = (props) => {
     title: true,
     category: true,
   });
+
+  const todo = useSelector((state) => state.todo);
 
   const submitFormHandler = (event) => {
     event.preventDefault();
@@ -100,7 +103,8 @@ const NewTaskForm = (props) => {
         <Button className={styles.cancelButton}>Cancel</Button>
       </Link>
       <Button className={styles.submitButton} type="submit">
-        Create
+        {!todo.isLoading && "Create"}
+        {todo.isLoading && "sending..."}
       </Button>
     </form>
   );
