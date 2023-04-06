@@ -9,10 +9,12 @@
       align-items: center;
       flex: 2;
       //   width: 80%;
+      p {
+        font-size: 14px;
+        font-weight: 600;
+      }
       .checkbox {
         margin: 0 0.5rem;
-        background-color: red !important;
-        border-color: red !important;
         width: 26px;
         height: 27px;
       }

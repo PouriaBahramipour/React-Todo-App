@@ -68,7 +68,7 @@ const NewTask = () => {
       <ToastContainer />
       <Card className={styles["card-content"]}>
         <header className={styles.header}>
-          <Link to="/">
+          <Link to="/tasks">
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="1x"

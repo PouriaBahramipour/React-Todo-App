@@ -24,16 +24,23 @@
       border-right: 1px solid #ccc;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding: 0 0 9rem 2rem;
+      a {
+        margin: 0.7rem;
+        color: $color-black;
+        font-weight: bold;
+      }
     }
 
     .taskItem {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       flex: 4;
       width: 80%;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
 
       header {
         width: 90%;
@@ -48,8 +55,14 @@
         margin-bottom: 0.5rem;
         border-radius: 1rem;
         background: $input-color;
+        font-weight: bold;
       }
-
+      .search-icon {
+        position: absolute;
+        top: 83px;
+        right: 45px;
+        color: #babac2;
+      }
       ul {
         height: 320px;
         overflow: auto;

@@ -7,6 +7,7 @@ import styles from "./AvalaibleTask.module.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const AvalaibleTask = () => {
   const dispatch = useDispatch();
@@ -42,16 +43,29 @@ const AvalaibleTask = () => {
       <Card className={styles.taskCard}>
         <div className={styles.taskContent}>
           <div className={styles.menuBar}>
-            <Link to="/">abcd</Link>
+            <Link to="/">All</Link>
+            <Link to="/">Groceries</Link>
+            <Link to="/">College</Link>
+            <Link to="/">Payments</Link>
           </div>
           <div className={styles.taskItem}>
             <header>
               <h2>All Tasks</h2>
-              <input />
+              <input type="text" placeholder="Search Something..."></input>
+              <FontAwesomeIcon
+                className={styles["search-icon"]}
+                icon={faSearch}
+              />
             </header>
             <ul>{tasksList}</ul>
             <div className={styles.newTaskIcon}>
-              <FontAwesomeIcon icon={faCirclePlus} size="3x" color="#1b91fb" />
+              <Link to="/newtask">
+                <FontAwesomeIcon
+                  icon={faCirclePlus}
+                  size="3x"
+                  color="#1b91fb"
+                />
+              </Link>
             </div>
           </div>
         </div>
