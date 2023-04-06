@@ -1,6 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  data: [],
   isLoading: false,
   error: null,
 };
@@ -8,6 +9,9 @@ const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
+    setData: (state, action) => {
+      state.data = action.payload;
+    },
     setLoading: (state, action) => {
       state.isLoading = action.payload;
     },

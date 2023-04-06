@@ -1,0 +1,44 @@
+@import "/src/styles/variables";
+.taskListItem {
+  border-bottom: 1px solid #ccc;
+  width: 95%;
+  .taskItem {
+    display: flex;
+    .taskTitle {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      //   width: 80%;
+      .checkbox {
+        margin: 0 0.5rem;
+        background-color: red !important;
+        border-color: red !important;
+        width: 26px;
+        height: 27px;
+      }
+    }
+    .taskRemove {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: $primary-color;
+    }
+    .taskCategory {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 12px;
+        background: $bg-category;
+        color: $primary-color;
+        text-align: center;
+        width: 80%;
+        padding: 0.3rem 0.5rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
