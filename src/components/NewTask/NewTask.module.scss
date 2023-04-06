@@ -1,9 +1,12 @@
 @import "/src/styles/variables";
 
 .card-content {
-  margin: 0 auto;
-  padding: 1rem;
-
+  max-width: 50rem;
+  width: 90%;
+  margin: 5rem auto;
+  .newTaskCard {
+    height: 550px;
+  }
   .header {
     display: flex;
     justify-content: center;

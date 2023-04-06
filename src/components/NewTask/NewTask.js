@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Card from "../UI/Card";
 import NewTaskForm from "./NewTaskForm";
 import styles from "./NewTask.module.scss";
@@ -64,9 +64,9 @@ const NewTask = () => {
   };
 
   return (
-    <Fragment>
+    <section className={styles["card-content"]}>
       <ToastContainer />
-      <Card className={styles["card-content"]}>
+      <Card className={styles.newTaskCard}>
         <header className={styles.header}>
           <Link to="/tasks">
             <FontAwesomeIcon
@@ -79,7 +79,7 @@ const NewTask = () => {
         </header>
         <NewTaskForm onConfirm={submitNewTaskHandler} />
       </Card>
-    </Fragment>
+    </section>
   );
 };
 

@@ -8,6 +8,7 @@ form {
     width: 60%;
     margin: 2rem auto 0;
     text-align: left;
+    font-weight: bold;
   }
 
   input {
@@ -20,15 +21,20 @@ form {
     border-radius: 1rem;
     background: $input-color;
   }
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.5rem 0;
+    text-align: center;
+    padding: 0 7rem;
 
-  .submitButton {
-    margin: 1.5rem 0.5rem;
-  }
-  .cancelButton {
-    margin: 1.5rem 0.5rem;
-    background-color: $color_white;
-    color: $color-black;
-    border: none;
+    .cancelButton {
+      background-color: $color_white;
+      color: $color-black;
+      border: none;
+      font-size: 14px;
+    }
   }
 
   .invalid p {

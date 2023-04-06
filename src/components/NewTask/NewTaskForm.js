@@ -99,13 +99,15 @@ const NewTaskForm = (props) => {
           <p>Please Enter Payment or College or Groceries Category!</p>
         )}
       </div>
-      <Link to="/">
-        <Button className={styles.cancelButton}>Cancel</Button>
-      </Link>
-      <Button className={styles.submitButton} type="submit">
-        {!todo.isLoading && "Create"}
-        {todo.isLoading && "sending..."}
-      </Button>
+      <div className={styles.actions}>
+        <Button className={styles.cancelButton}>
+          <Link to="/">Cancel</Link>
+        </Button>
+        <Button className={styles.submitButton} type="submit">
+          {!todo.isLoading && "Create"}
+          {todo.isLoading && "sending..."}
+        </Button>
+      </div>
     </form>
   );
 };
