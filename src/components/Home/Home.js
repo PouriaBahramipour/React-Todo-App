@@ -9,20 +9,22 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
-    <Card>
-      <div className={styles.home}>
-        <div>
-          <HomeImage />
+    <section className={styles.home}>
+      <Card className={styles.homeCard}>
+        <div className={styles.homeContent}>
+          <div>
+            <HomeImage />
+          </div>
+          <div>
+            <p>There’s no task here!</p>
+          </div>
+          <div>
+            <FontAwesomeIcon icon={faPlus} size="1x" color="#1B91FB" />
+            <Link to="/newtask">Create new task</Link>
+          </div>
         </div>
-        <div>
-          <p>There’s no task here!</p>
-        </div>
-        <div>
-          <FontAwesomeIcon icon={faPlus} size="1x" color="#1B91FB" />
-          <Link to="/newtask">Create new task</Link>
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </section>
   );
 };
 export default Home;

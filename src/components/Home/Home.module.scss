@@ -1,10 +1,24 @@
 .home {
-  margin: 100px 0;
-  p {
-    font-size: 24px;
-    margin-top: 25px;
-  }
-  a {
-    margin-left: 5px;
+  max-width: 50rem;
+  width: 90%;
+  margin: 5rem auto;
+  .homeCard {
+    height: 550px;
+
+    .homeContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+
+      p {
+        font-size: 24px;
+        margin-top: 25px;
+      }
+      a {
+        margin-left: 5px;
+      }
+    }
   }
 }

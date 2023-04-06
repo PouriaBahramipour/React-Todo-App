@@ -4,17 +4,19 @@
   max-width: 50rem;
   width: 90%;
   margin: 5rem auto;
+
   .newTaskCard {
     height: 550px;
-  }
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .title {
-    text-align: center;
-    width: 100%;
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      text-align: center;
+      width: 100%;
+    }
   }
 }
