@@ -1,32 +1,30 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./TaskMenu.module.scss";
 import { todoActions } from "../../../store";
 
 const TaskMenu = () => {
   const dispatch = useDispatch();
+  const todoCategory = useSelector((state) => state.todo.data);
 
-  const allCategoryHandler = () => {
-    dispatch(todoActions.setItemCategory(""));
+  const filterCategoryHandler = (category) => {
+    dispatch(todoActions.setItemCategory(category));
   };
 
-  const groceriesHandler = () => {
-    dispatch(todoActions.setItemCategory("Groceries"));
-  };
-  const collegeHandler = () => {
-    dispatch(todoActions.setItemCategory("College"));
-  };
-  const paymentsHandler = () => {
-    dispatch(todoActions.setItemCategory("Payment"));
-  };
+  const categoryArray = todoCategory.map((item) => item.category);
+  const uniqueCategoryArray = [...new Set(categoryArray)];
 
   return (
     <div className={styles.menuBar}>
       <ul>
-        <li onClick={allCategoryHandler}>All</li>
-        <li onClick={groceriesHandler}>Groceries</li>
-        <li onClick={collegeHandler}>College</li>
-        <li onClick={paymentsHandler}>Payments</li>
+        <li onClick={() => filterCategoryHandler("")}>All</li>
+        {uniqueCategoryArray.map((item, index) =>
+          item === "Uncategorized" ? null : (
+            <li key={index} onClick={() => filterCategoryHandler(item)}>
+              {item}
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
