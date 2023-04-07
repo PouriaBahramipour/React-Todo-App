@@ -9,12 +9,13 @@
   justify-content: center;
   align-items: flex-start;
   padding: 0 0 9rem 2rem;
-  a {
+  li {
     margin: 0.7rem;
     color: $color-black;
     font-weight: bold;
+    cursor: pointer !important;
   }
-  a:hover {
+  li:hover {
     color: $hover-color;
   }
 }

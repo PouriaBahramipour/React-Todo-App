@@ -26,6 +26,15 @@ const todoSlice = createSlice({
         item.title.toLowerCase().includes(searchTitle)
       );
     },
+    setItemCategory: (state, action) => {
+      const category = action.payload.toLowerCase();
+      if (action.payload === "") {
+        state.filteredData = state.data;
+      }
+      state.filteredData = state.data.filter((item) =>
+        item.category.toLowerCase().includes(category)
+      );
+    },
   },
 });
 
