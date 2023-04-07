@@ -1,34 +1,49 @@
-import React from "react";
-import Card from "../UI/Card";
-import HomeImage from "./HomeImage";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { todoActions } from "../../store";
+import EmptyTaskPage from "./EmptyTaskPage";
+import Tasks from "../Tasks/Tasks";
+import { getTodoData } from "../API/API";
 import styles from "./Home.module.scss";
-import { Link } from "react-router-dom";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import LoadingPage from "./LoadingPage";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(todoActions.setLoading(true));
+    const fetchTasks = async () => {
+      try {
+        const data = await getTodoData();
+
+        const loadedItem = [];
+
+        for (let key in data) {
+          loadedItem.push({
+            id: key,
+            title: data[key].title,
+            category: data[key].category,
+          });
+        }
+
+        dispatch(todoActions.setData(loadedItem));
+      } catch (error) {
+        dispatch(todoActions.setError(error.message));
+      }
+      dispatch(todoActions.setLoading(false));
+    };
+    fetchTasks();
+  }, [dispatch]);
+
+  const { data: todoData, isLoading } = useSelector((state) => state.todo);
+
+  const hasItemState = todoData.length > 0;
+
   return (
     <section className={styles.home}>
-      <Card className={styles.homeCard}>
-        <div className={styles.homeContent}>
-          <div>
-            <HomeImage />
-          </div>
-          <div>
-            <p>There’s no task here!</p>
-          </div>
-          <div className={styles.actions}>
-            <FontAwesomeIcon
-              icon={faPlus}
-              size="1x"
-              className={styles.plusIcon}
-              color="#1B91FB"
-            />
-            <Link to="/newtask">Create new task</Link>
-          </div>
-        </div>
-      </Card>
+      {isLoading && <LoadingPage />}
+      {!isLoading && !hasItemState && <EmptyTaskPage />}
+      {!isLoading && hasItemState && <Tasks />}
     </section>
   );
 };

@@ -4,33 +4,4 @@
   max-width: 50rem;
   width: 90%;
   margin: 5rem auto;
-  .homeCard {
-    height: 550px;
-
-    .homeContent {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-
-      p {
-        font-size: 24px;
-        margin-top: 25px;
-      }
-      a {
-        margin-left: 5px;
-      }
-
-      .actions:hover,
-      .actions:active {
-        a {
-          color: $hover-color;
-        }
-        .plusIcon {
-          color: $hover-color;
-        }
-      }
-    }
-  }
 }

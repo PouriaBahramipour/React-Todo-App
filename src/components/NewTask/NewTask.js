@@ -3,7 +3,7 @@ import Card from "../UI/Card";
 import NewTaskForm from "./NewTaskForm";
 import styles from "./NewTask.module.scss";
 import { useDispatch } from "react-redux";
-
+import { postTodoData } from "../API/API";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -38,19 +38,11 @@ const NewTask = () => {
   };
 
   const dispatch = useDispatch();
+
   const submitNewTaskHandler = async (taskInfo) => {
     dispatch(todoActions.setLoading(true));
     try {
-      const response = await fetch(
-        "https://todo-app-4c82d-default-rtdb.firebaseio.com/todo.json",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            title: taskInfo.title,
-            category: taskInfo.category,
-          }),
-        }
-      );
+      const response = await postTodoData(taskInfo);
       if (response.ok === false) {
         throw new Error("Something went wrong!");
       } else {
@@ -68,7 +60,7 @@ const NewTask = () => {
       <ToastContainer />
       <Card className={styles.newTaskCard}>
         <header className={styles.header}>
-          <Link to="/tasks">
+          <Link to="/">
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="1x"
