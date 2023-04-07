@@ -1,0 +1,20 @@
+@import "./src/styles/variables";
+
+.menuBar {
+  flex: 1;
+  width: 20%;
+  display: flex;
+  border-right: 1px solid #ccc;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 0 9rem 2rem;
+  a {
+    margin: 0.7rem;
+    color: $color-black;
+    font-weight: bold;
+  }
+  a:hover {
+    color: $hover-color;
+  }
+}

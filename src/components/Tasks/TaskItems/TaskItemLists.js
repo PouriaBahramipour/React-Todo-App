@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TaskItem.module.scss";
+import styles from "./TaskItemLists.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 

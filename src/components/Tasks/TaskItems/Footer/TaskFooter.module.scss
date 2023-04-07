@@ -1,0 +1,9 @@
+@import "/src/styles/variables";
+
+.newTaskIcon {
+  width: 100%;
+  text-align: right;
+}
+.circlePlus:hover {
+  color: $hover-color;
+}
