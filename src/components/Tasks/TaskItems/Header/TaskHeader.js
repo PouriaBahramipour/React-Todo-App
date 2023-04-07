@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./TaskHeader.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+import TaskSearch from "./TaskSearch";
 
 const TaskHeader = () => {
   return (
-    <header>
+    <header className={styles.taskHeader}>
       <h2>All Tasks</h2>
-      <input type="text" placeholder="Search Something..."></input>
-      <FontAwesomeIcon className={styles["search-icon"]} icon={faSearch} />
+      <TaskSearch />
     </header>
   );
 };

@@ -4,19 +4,20 @@ import TaskItemLists from "./TaskItemLists";
 import styles from "./TaskItems.module.scss";
 
 const TaskItemsList = () => {
-  const todoData = useSelector((state) => state.todo.data);
+  const todoData = useSelector((state) => state.todo.filteredData);
+  console.log("ss", todoData);
 
-  const loadedItem = [];
+  // const loadedItem = [];
 
-  for (let key in todoData) {
-    loadedItem.push({
-      id: key,
-      title: todoData[key].title,
-      category: todoData[key].category,
-    });
-  }
+  // for (let key in todoData) {
+  //   loadedItem.push({
+  //     id: key,
+  //     title: todoData[key].title,
+  //     category: todoData[key].category,
+  //   });
+  // }
 
-  const tasksList = loadedItem.map((task) => (
+  const tasksList = todoData.map((task) => (
     <TaskItemLists id={task.id} title={task.title} category={task.category} />
   ));
 

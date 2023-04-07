@@ -1,0 +1,19 @@
+@import "/src/styles/variables";
+
+input {
+  margin: 0.5rem auto;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.7rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  background: $input-color;
+  font-weight: bold;
+}
+.search-icon {
+  position: absolute;
+  top: 83px;
+  right: 45px;
+  color: #babac2;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { todoActions } from "../../store";
 import TaskContent from "./TaskItems/TaskContent";
 import Card from "../UI/Card";
@@ -14,10 +14,24 @@ const AvalaibleTask = () => {
         "https://todo-app-4c82d-default-rtdb.firebaseio.com/todo.json"
       );
       const data = await response.json();
-      dispatch(todoActions.setData(data));
+
+      const loadedItem = [];
+
+      for (let key in data) {
+        loadedItem.push({
+          id: key,
+          title: data[key].title,
+          category: data[key].category,
+        });
+      }
+
+      dispatch(todoActions.setData(loadedItem));
     };
     fetchTasks();
   }, [dispatch]);
+
+  const todoItem = useSelector((state) => state.todo.data);
+  console.log(todoItem);
 
   return (
     <section className={styles.tasks}>
