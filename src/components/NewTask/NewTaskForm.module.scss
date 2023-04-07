@@ -35,6 +35,17 @@ form {
       border: none;
       font-size: 14px;
     }
+    .cancelButton:hover,
+    .cancelButton:active {
+      color: $hover-color;
+      background-color: #f5fbff;
+    }
+
+    .submitButton:hover,
+    .submitButton:active {
+      background-color: $hover-color;
+      border-color: $hover-color;
+    }
   }
 
   .invalid p {

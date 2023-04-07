@@ -1,9 +1,14 @@
 @import "/src/styles/variables";
-.taskListItem {
+.taskListItem:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+.taskListItem {
   width: 95%;
+
   .taskItem {
     display: flex;
+
     .taskTitle {
       display: flex;
       align-items: center;

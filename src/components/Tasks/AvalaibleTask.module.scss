@@ -31,6 +31,9 @@
         color: $color-black;
         font-weight: bold;
       }
+      a:hover {
+        color: $hover-color;
+      }
     }
 
     .taskItem {
@@ -73,6 +76,9 @@
       .newTaskIcon {
         width: 100%;
         text-align: right;
+      }
+      .circlePlus:hover {
+        color: $hover-color;
       }
     }
   }

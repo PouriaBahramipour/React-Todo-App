@@ -62,6 +62,7 @@ const AvalaibleTask = () => {
               <Link to="/newtask">
                 <FontAwesomeIcon
                   icon={faCirclePlus}
+                  className={styles.circlePlus}
                   size="3x"
                   color="#1b91fb"
                 />

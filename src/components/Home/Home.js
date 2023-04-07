@@ -18,8 +18,13 @@ const Home = () => {
           <div>
             <p>There’s no task here!</p>
           </div>
-          <div>
-            <FontAwesomeIcon icon={faPlus} size="1x" color="#1B91FB" />
+          <div className={styles.actions}>
+            <FontAwesomeIcon
+              icon={faPlus}
+              size="1x"
+              className={styles.plusIcon}
+              color="#1B91FB"
+            />
             <Link to="/newtask">Create new task</Link>
           </div>
         </div>
