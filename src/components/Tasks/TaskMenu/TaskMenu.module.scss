@@ -15,6 +15,9 @@
     font-weight: bold;
     cursor: pointer !important;
   }
+  .selectedItem {
+    color: $primary-color;
+  }
   li:hover {
     color: $hover-color;
   }

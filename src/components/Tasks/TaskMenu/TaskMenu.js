@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./TaskMenu.module.scss";
 import { todoActions } from "../../../store";
 
 const TaskMenu = () => {
+  const [selectedItem, setSelectedItem] = useState("all");
   const dispatch = useDispatch();
   const todoCategory = useSelector((state) => state.todo.data);
 
-  const filterCategoryHandler = (category) => {
+  const filterCategoryHandler = (category, index) => {
     dispatch(todoActions.setItemCategory(category));
+    if (index === "all") {
+      setSelectedItem("all");
+    }
+    setSelectedItem(index);
   };
 
   const categoryArray = todoCategory.map((item) => item.category);
@@ -17,10 +22,19 @@ const TaskMenu = () => {
   return (
     <div className={styles.menuBar}>
       <ul>
-        <li onClick={() => filterCategoryHandler("")}>All</li>
+        <li
+          className={selectedItem === "all" ? styles.selectedItem : ""}
+          onClick={() => filterCategoryHandler("", "all")}
+        >
+          All
+        </li>
         {uniqueCategoryArray.map((item, index) =>
           item === "Uncategorized" ? null : (
-            <li key={index} onClick={() => filterCategoryHandler(item)}>
+            <li
+              key={index}
+              className={selectedItem === index ? styles.selectedItem : ""}
+              onClick={() => filterCategoryHandler(item, index)}
+            >
               {item}
             </li>
           )
