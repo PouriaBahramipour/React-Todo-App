@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./TaskMenu.module.scss";
 import { todoActions } from "../../../store";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const TaskMenu = () => {
   const [selectedItem, setSelectedItem] = useState("all");
@@ -26,8 +28,16 @@ const TaskMenu = () => {
           className={selectedItem === "all" ? styles.selectedItem : ""}
           onClick={() => filterCategoryHandler("", "all")}
         >
+          {selectedItem === "all" && (
+            <FontAwesomeIcon
+              className={styles.checkIcon}
+              icon={faCheck}
+              size="1x"
+            />
+          )}
           All
         </li>
+
         {uniqueCategoryArray.map((item, index) =>
           item === "Uncategorized" ? null : (
             <li
@@ -35,6 +45,13 @@ const TaskMenu = () => {
               className={selectedItem === index ? styles.selectedItem : ""}
               onClick={() => filterCategoryHandler(item, index)}
             >
+              {selectedItem === index && (
+                <FontAwesomeIcon
+                  className={styles.checkIcon}
+                  icon={faCheck}
+                  size="1x"
+                />
+              )}
               {item}
             </li>
           )

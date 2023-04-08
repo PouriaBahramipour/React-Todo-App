@@ -17,6 +17,10 @@
   }
   .selectedItem {
     color: $primary-color;
+    margin-left: 3px;
+  }
+  .checkIcon {
+    margin-right: 2px;
   }
   li:hover {
     color: $hover-color;
