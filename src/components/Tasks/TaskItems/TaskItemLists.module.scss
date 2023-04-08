@@ -33,17 +33,66 @@
       justify-content: flex-end;
       align-items: center;
       color: $primary-color;
+
+      .icon {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        cursor: pointer !important;
+      }
+      .icon:hover {
+        opacity: 1;
+        animation: pulse 0.5s ease-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
     }
     .taskCategory {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer !important;
 
-      p {
+      &:hover {
+        opacity: 1;
+        animation: pulse 0.5s ease-out;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .categoryStyle {
         font-size: 12px;
         background: $bg-category;
         color: $primary-color;
+        text-align: center;
+        width: 80%;
+        padding: 0.3rem 0.5rem;
+        border-radius: 2rem;
+      }
+      .categoryDoneStyle {
+        font-size: 12px;
+        background: $bg-color;
+        color: $color_white;
         text-align: center;
         width: 80%;
         padding: 0.3rem 0.5rem;

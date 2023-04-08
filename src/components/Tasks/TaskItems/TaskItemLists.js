@@ -18,7 +18,10 @@ const TaskItem = (props) => {
     );
   };
 
-  const titleStyle = isCheckedChechBox ? styles.lineThrough : "";
+  const titleStyleTaskDone = isCheckedChechBox ? styles.lineThrough : "";
+  const categoryStyleTaskDone = isCheckedChechBox
+    ? styles.categoryDoneStyle
+    : styles.categoryStyle;
 
   const handleCheckBox = () => {
     setIsCheckedChechBox(!isCheckedChechBox);
@@ -33,17 +36,18 @@ const TaskItem = (props) => {
             className={styles.checkbox}
             onChange={handleCheckBox}
           />
-          <p className={titleStyle}>{props.title}</p>
+          <p className={titleStyleTaskDone}>{props.title}</p>
         </div>
         <div className={styles.taskRemove}>
           <FontAwesomeIcon
             icon={faTrashCan}
+            className={styles.icon}
             size="1x"
             onClick={handlerDeleteTodoItem}
           />
         </div>
         <div className={styles.taskCategory}>
-          <p>{props.category}</p>
+          <p className={categoryStyleTaskDone}>{props.category}</p>
         </div>
       </div>
     </li>
