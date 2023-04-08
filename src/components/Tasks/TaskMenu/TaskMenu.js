@@ -6,7 +6,7 @@ import { todoActions } from "../../../store";
 const TaskMenu = () => {
   const [selectedItem, setSelectedItem] = useState("all");
   const dispatch = useDispatch();
-  const todoCategory = useSelector((state) => state.todo.data);
+  const todoCategory = useSelector((state) => state.todo.menuItem);
 
   const filterCategoryHandler = (category, index) => {
     dispatch(todoActions.setItemCategory(category));

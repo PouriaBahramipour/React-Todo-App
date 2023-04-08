@@ -2,6 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   data: [],
+  menuItem: [],
   isLoading: false,
   error: null,
   filteredData: [],
@@ -12,6 +13,7 @@ const todoSlice = createSlice({
   reducers: {
     setData: (state, action) => {
       state.data = action.payload;
+      state.menuItem = state.data;
       state.filteredData = state.data;
     },
     setLoading: (state, action) => {
@@ -31,9 +33,10 @@ const todoSlice = createSlice({
       if (action.payload === "") {
         state.filteredData = state.data;
       }
-      state.filteredData = state.data.filter((item) =>
+      state.filteredData = state.menuItem.filter((item) =>
         item.category.toLowerCase().includes(category)
       );
+      state.data = state.filteredData;
     },
   },
 });
