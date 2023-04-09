@@ -6,6 +6,8 @@ const initialState = {
   isLoading: false,
   error: null,
   filteredData: [],
+  resetData: [],
+  clickedMenuItem: false,
 };
 const todoSlice = createSlice({
   name: "todo",
@@ -13,6 +15,7 @@ const todoSlice = createSlice({
   reducers: {
     setData: (state, action) => {
       state.data = action.payload;
+      state.resetData = state.data;
       state.menuItem = state.data;
       state.filteredData = state.data;
     },
@@ -31,12 +34,16 @@ const todoSlice = createSlice({
     setItemCategory: (state, action) => {
       const category = action.payload.toLowerCase();
       if (action.payload === "") {
-        state.filteredData = state.data;
+        state.filteredData = state.resetData;
+        state.data = state.filteredData;
+        state.clickedMenuItem = !state.clickedMenuItem;
+      } else {
+        state.filteredData = state.menuItem.filter(
+          (item) => item.category.toLowerCase() === category
+        );
+        state.clickedMenuItem = !state.clickedMenuItem;
+        state.data = state.filteredData;
       }
-      state.filteredData = state.menuItem.filter((item) =>
-        item.category.toLowerCase().includes(category)
-      );
-      state.data = state.filteredData;
     },
   },
 });

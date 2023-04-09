@@ -16,9 +16,13 @@ const NewTaskForm = (props) => {
   });
 
   const todo = useSelector((state) => state.todo);
-
   const submitFormHandler = (event) => {
     event.preventDefault();
+    const enteredNewCategory = enteredCategory
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+
     const enteredTitleIsValid = !isEmpty(enteredTitle);
     const enteredCategoryIsEmpty = isEmpty(enteredCategory);
 
@@ -42,7 +46,7 @@ const NewTaskForm = (props) => {
       });
       props.onConfirm({
         title: enteredTitle,
-        category: enteredCategory,
+        category: enteredNewCategory,
       });
       setEnteredTitle("");
       setEnteredCategory("");
@@ -54,7 +58,7 @@ const NewTaskForm = (props) => {
   };
 
   const changeCategoryHandler = (enteredCategory) => {
-    setEnteredCategory(enteredCategory.target.value.toLowerCase());
+    setEnteredCategory(enteredCategory.target.value);
   };
 
   const titleValidationClass = formInputsValidity.title ? "" : styles.invalid;

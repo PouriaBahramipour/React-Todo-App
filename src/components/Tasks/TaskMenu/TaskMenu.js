@@ -11,6 +11,7 @@ const TaskMenu = () => {
 
   const filterCategoryHandler = (category, index) => {
     dispatch(todoActions.setItemCategory(category));
+
     if (index === "all") {
       setSelectedItem("all");
     }

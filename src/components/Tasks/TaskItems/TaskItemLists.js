@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import styles from "./TaskItemLists.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const TaskItem = (props) => {
   const [isCheckedChechBox, setIsCheckedChechBox] = useState(false);
 
   const handlerDeleteTodoItem = () => {
-    fetch(
-      `https://todo-app-4c8 2d-default-rtdb.firebaseio.com/todo/${props.id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    axios
+      .delete(
+        "https://todo-app-4c8 2d-default-rtdb.firebaseio.com/todo/" + props.id
+      )
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const titleStyleTaskDone = isCheckedChechBox ? styles.lineThrough : "";
