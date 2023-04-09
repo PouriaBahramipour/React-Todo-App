@@ -6,8 +6,8 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 const TaskItem = (props) => {
   const [isCheckedChechBox, setIsCheckedChechBox] = useState(false);
 
-  const handlerDeleteTodoItem = async () => {
-    await fetch(
+  const handlerDeleteTodoItem = () => {
+    fetch(
       `https://todo-app-4c8 2d-default-rtdb.firebaseio.com/todo/${props.id}`,
       {
         method: "DELETE",

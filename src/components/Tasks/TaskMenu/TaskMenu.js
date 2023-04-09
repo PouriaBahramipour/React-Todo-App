@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./TaskMenu.module.scss";
 import { todoActions } from "../../../store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 const TaskMenu = () => {
   const [selectedItem, setSelectedItem] = useState("all");
   const dispatch = useDispatch();
@@ -31,7 +30,7 @@ const TaskMenu = () => {
           {selectedItem === "all" && (
             <FontAwesomeIcon
               className={styles.checkIcon}
-              icon={faCheck}
+              icon={faCircleCheck}
               size="1x"
             />
           )}
@@ -48,7 +47,7 @@ const TaskMenu = () => {
               {selectedItem === index && (
                 <FontAwesomeIcon
                   className={styles.checkIcon}
-                  icon={faCheck}
+                  icon={faCircleCheck}
                   size="1x"
                 />
               )}
