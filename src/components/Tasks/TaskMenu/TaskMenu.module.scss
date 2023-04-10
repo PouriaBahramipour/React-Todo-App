@@ -1,14 +1,14 @@
 @import "./src/styles/variables";
 
 .menuBar {
+  height: 503px;
+  overflow: auto;
+  width: 100%;
   flex: 1;
   width: 20%;
-  display: flex;
   border-right: 1px solid #ccc;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 0 9rem 2rem;
+  padding: 5rem 0 9rem 2rem;
+
   li {
     margin: 1rem 0 1.5rem 0.8rem;
     color: $color-black;

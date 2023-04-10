@@ -51,7 +51,7 @@ const NewTask = () => {
         successNotify("Successfully Registered");
         setTimeout(() => {
           navigate("/");
-        }, 2000);
+        }, 1000);
       }
     } catch (error) {
       dispatch(todoActions.setError(error.message));
