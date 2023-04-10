@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import NewTaskForm from "./NewTaskForm";
 import styles from "./NewTask.module.scss";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { postTodoData } from "../API/API";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +39,7 @@ const NewTask = () => {
   };
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitNewTaskHandler = async (taskInfo) => {
     dispatch(todoActions.setLoading(true));
@@ -46,7 +48,10 @@ const NewTask = () => {
       if (response.ok === false) {
         throw new Error("Something went wrong!");
       } else {
-        successNotify("success");
+        successNotify("Successfully Registered");
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       }
     } catch (error) {
       dispatch(todoActions.setError(error.message));
