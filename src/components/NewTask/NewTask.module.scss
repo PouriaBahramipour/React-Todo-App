@@ -6,12 +6,10 @@
   margin: 5rem auto;
 
   .newTaskCard {
-    height: 550px;
+    @include cardHeight;
 
     .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexbox;
     }
 
     .title {

@@ -1,0 +1,9 @@
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin cardHeight {
+  height: 550px;
+}

@@ -1,12 +1,10 @@
 @import "/src/styles/variables";
 .homeCard {
-  height: 550px;
+  @include cardHeight;
 
   .homeContent {
-    display: flex;
+    @include flexbox;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100%;
 
     p {

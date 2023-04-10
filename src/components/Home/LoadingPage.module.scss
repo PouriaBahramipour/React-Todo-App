@@ -1,10 +1,8 @@
 @import "/src/styles/variables";
 
 .loading {
-  height: 550px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include cardHeight;
+  @include flexbox;
 
   .loader {
     border: 8px solid $bg-color;

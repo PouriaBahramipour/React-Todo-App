@@ -38,7 +38,7 @@ form {
     .cancelButton:hover,
     .cancelButton:active {
       color: $hover-color;
-      background-color: #f5fbff;
+      background-color: $cancelButton-color;
     }
 
     .submitButton:hover,
@@ -57,8 +57,8 @@ form {
   }
 
   .invalid input {
-    border-color: #aa0b20;
-    background-color: #ffeff1;
+    border-color: $warning-color;
+    background-color: $bg-invalidInput;
     margin-bottom: 0;
   }
 }
