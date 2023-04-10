@@ -10,7 +10,7 @@ const TaskItem = (props) => {
   const handlerDeleteTodoItem = () => {
     axios
       .delete(
-        "https://todo-app-4c8 2d-default-rtdb.firebaseio.com/todo/" + props.id
+        "https://todo-app-4c82d-default-rtdb.firebaseio.com/todo/" + props.id
       )
       .then((response) => {
         console.log(response.data);
